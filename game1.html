@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main page</title>
+    <style>
+        body{
+            background-image: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/1437481/1280/640/m1/fpnw/wm0/game_background_21-.jpg?1468084190&s=0cb19d7f2ecc1bf3fd766646f6db5309");
+            background-size: cover;
+        }
+      
+        #bullet1{
+            position: absolute;
+            bottom: 30%;
+            left: 5%;
+            visibility: hidden;
+        }
+        #bullet2{
+            position: absolute;
+            bottom: 30%;
+            right: 5%;
+            visibility: hidden;
+        }
+        #btn-1{
+            background-color: rgb(162, 170, 52);
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+        }
+        #btn-2{
+            background-color: rgb(162, 170, 52);
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            float: right;
+        }
+        h2{
+            text-align: center;
+            font-size: 40px;
+        }
+        
+        @keyframes bullet1 {
+            25%{
+                transform: translate(1300px);
+            }
+        }
+        @keyframes bullet2 {
+            75%{
+                transform: translate(-1300px);
+            }
+        }
+        h5{
+            font-size: 30px;
+            color: white;
+            position: absolute;
+            top: 40%;
+        }
+        #player1{
+            position: absolute;
+            bottom: 15%;
+            left: 15%;
+        }
+        #player2{
+            position: absolute;
+            bottom: 15%;
+            right: 15%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="gameover">Round <b>1</b></h2>
+        <button onchange="score1()" id="btn-1">0 </button>
+        <button onchange="score2()" id="btn-2">0 </button>
+        
+        <h5 style="left: 10%;">Player 1</h5>
+
+       <img src="https://clipground.com/images/animated-bullets-clipart-11.jpg" alt="bullet" id="bullet1" width="8%">
+       <button onclick="shoot1()" id="player1">Shoot</button>
+
+       <h5 style="right: 10%;">Player 2</h5>
+    
+       <img src="https://th.bing.com/th/id/OIP.NAAqie5UtnuuEySZ8h57mgHaFg?pid=ImgDet&w=152&h=113&c=7" alt="bullet" id="bullet2" width="8%">
+       <button onclick="shoot2()" id="player2">Shoot</button>
+    
+    </div>
+
+    <script>
+    function shoot1(){
+        const element1 = document.getElementById("bullet1");
+        element1.style.animationName="bullet1";
+        element1.style.animationDuration="4s";
+        element1.style.animationDirection="normal";
+        element1.style.animationDelay = "0s";
+        // element1.style.animationTimingFunction="ease";
+        element1.style.animationIterationCount="1";
+        element1.style.visibility="visible";
+        const element2 = document.getElementById("btn-1");
+        element2.innerText = "3";
+       
+document.getElementById('gameover').innerText = "Game over! Player 1 winner ";  
+    }  
+
+    function shoot2(){
+        const element3 = document.getElementById("bullet2");
+        element3.style.animationName="bullet2";
+        element3.style.animationDuration="4s";
+        element3.style.animationDirection="normal";
+        element3.style.animationDelay = "0s";
+        // element3.style.animationTimingFunction="ease";
+        element3.style.animationIterationCount="1";
+        element3.style.visibility="visible";
+        const element4 = document.getElementById("btn-2");
+        element4.innerText = "3";
+    
+document.getElementById('gameover').innerText = "Game over! Player 2 winner ";  
+    }  
+
+    </script>
+</body>
+</html>
